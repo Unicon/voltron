@@ -18,8 +18,48 @@ define(
 
 		@module gallery
 		**/
+
+		/**
+		Organizes angular controllers into a single group.
+
+		@module gallery
+		@submodule gallery-controller
+		**/
+
+		/**
+		Organizes angular directives into a single group.
+
+		The classes in this module each define a single method
+		used as an Angular.js directive. The class defines directive
+		dependencies, while the method defines element attributes as params
+
+		@module gallery
+		@submodule gallery-directive
+		**/
+
+		/**
+		Organizes angular services into a single group.
+
+		@module gallery
+		@submodule gallery-service
+		**/
+
+		/**
+		Organizes angular filters into a single group.
+
+		@module gallery
+		@submodule gallery-filter
+		**/
+
+		/**
+		Organizes angular resources into a single group. Specific to Angular.js $resource services.
+
+		@module gallery
+		@submodule gallery-resource
+		**/
+
 		var app = {
-			
+
 			/**
 			Reference to angular gallery module.
 

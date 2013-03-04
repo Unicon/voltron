@@ -18,7 +18,7 @@ define(
 		encountered on an element.
 
 		@class PreventDefault
-		@submodule directive
+		@submodule gallery-directive
 		@constructor
 		**/
 		app.gallery.directive(
@@ -46,7 +46,7 @@ define(
 								lElement.on('click', function (e) {
 									e.preventDefault();
 								});
-							}
+							};
 						}
 					};
 

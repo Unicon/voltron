@@ -23,6 +23,9 @@ module.exports = function (grunt) {
 			jasmine: {
 				command: 'phantomjs public/js/lib/jasmine/jasmine-runner.js http://' + nconf.get('GRUNT_HOST') + ':' + nconf.get('GRUNT_PORT') + '/js/test/',
 				stdout: true
+			},
+			yuidoc: {
+				command: 'yuidoc --config package.json --server 5000'
 			}
 		},
 
@@ -142,16 +145,23 @@ module.exports = function (grunt) {
 					'target/gallery-ui/data/': 'public/data/**'
 				}
 			}
+		},
+
+		yuidoc: {
+			compile: '<json:package.json>'
 		}
 	});
 
 	// Load plugins/tasks.
 	grunt.loadNpmTasks('grunt-contrib');
 	grunt.loadNpmTasks('grunt-exec');
+	grunt.loadNpmTasks('grunt-contrib-yuidoc');
 	grunt.loadTasks('tasks');
 
 	// Register tasks.
+	grunt.registerTask('docs', 'yuidoc');
+	grunt.registerTask('docs.server', 'exec:yuidoc');
 	grunt.registerTask('test', 'server exec');
 	grunt.registerTask('test.watch', 'server exec watch:test');
-	grunt.registerTask('default', 'lint less requirejs html copy');
+	grunt.registerTask('default', 'lint less requirejs html copy yuidoc');
 };
