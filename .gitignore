@@ -1,0 +1,10 @@
+# Ignore all logfiles and tempfiles.
+
+/target
+/node_modules/
+/public/docs/
+/public/css/app.css
+/public/application.manifest
+.DS_STORE
+npm-debug.log
+/config/machine-config.json

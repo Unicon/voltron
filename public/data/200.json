@@ -1,0 +1,8 @@
+{
+	"id": "200",
+	"name": "Eiffel Tower",
+	"description": "Eiffel tower in Paris, France",
+	"long_description" : "The Eiffel Tower (French: La Tour Eiffel, [tuʁ ɛfɛl]) is an iron lattice tower located on the Champ de Mars in Paris, named after the engineer Gustave Eiffel, whose company designed and built the tower. Erected in 1889 as the entrance arch to the 1889 World's Fair, it has become both a global cultural icon of France and one of the most recognizable structures in the world. The tower is the tallest structure in Paris and the most-visited paid monument in the world; 7.1 million people ascended it in 2011. The third level observatory's upper platform is at 279.11 m the highest accessible to public in the European Union and the highest in Europe as long as the platform of the Ostankino Tower, at 360 m, remains closed as a result of the fire of August 2000. The tower received its 250 millionth visitor in 2010.",
+	"url": "../../img/eiffel_tower.jpg",
+	"category": "buildings"
+}

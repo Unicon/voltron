@@ -1,0 +1,9 @@
+{
+	"name": "WG build",
+	"description": "WG build tasks",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"hogan.js": "*"
+	}
+}

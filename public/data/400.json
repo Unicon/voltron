@@ -1,0 +1,8 @@
+{
+	"id": "400",
+	"name": "Open Hard Drive",
+	"description": "Inside 15K SCSI HDD Open Hard Disk Drive",
+	"long_description" : "A hard disk drive (HDD)[note 2] is a data storage device used for storing and retrieving digital information using rapidly rotating discs (platters) coated with magnetic material. An HDD retains its data even when powered off. Data is read in a random-access manner, meaning individual blocks of data can be stored or retrieved in any order rather than just sequentially. An HDD consists of one or more rigid ("hard") rapidly rotating discs (platters) with magnetic heads arranged on a moving actuator arm to read and write data to the surfaces.",
+	"url": "../../img/hard_drive.jpg",
+	"category": "technology"
+}

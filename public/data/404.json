@@ -1,0 +1,8 @@
+{
+	"id": "404",
+	"name": "Electrical Panel",
+	"description": "Electrical Panel Automatic Fuses",
+	"long_description" : "In electronics and electrical engineering, a fuse (from the French fuser, Italian fuso, spindle) is a type of low resistance resistor that acts as a sacrificial device to provide overcurrent protection, of either the load or source circuit. Its essential component is a metal wire or strip that melts when too much current flows, which interrupts the circuit in which it is connected. Short circuit, overloading, mismatched loads or device failure are the prime reasons for excessive current.",
+	"url": "../../img/electrical_panel.jpg",
+	"category": "technology"
+}

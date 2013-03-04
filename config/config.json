@@ -1,0 +1,13 @@
+{
+	"PORT": 3000,
+	"GRUNT_HOST": "127.0.0.1",
+	"GRUNT_PORT": 4000,
+	"GRUNT_BASE_URL": "./public",
+	"ROOT_URL_STATIC": "",
+	"LESS_SETTINGS": {
+		"dest": "./public/css",
+		"src": "./public/less",
+		"prefix": "/css",
+		"debug": true
+	}
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+	<head>
+		<meta charset='utf-8' />
+		<meta equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+		<meta name='viewport', content='width=device-width,initial-scale=1' />
+		<meta name='description', content='Gallery' />
+		<meta http-equiv='Content-Type', content='no-cache' />
+		<meta http-equiv='Expires', content='-1' />
+		<title>{{title}}</title>
+		<base href="/">
+
+		<!--CSS DEPENDENCIES-->
+		<link href="css/app.css" rel="stylesheet" type="text/css">
+	</head>
+	<body ng-controller="ApplicationCtrl">
+		<!--HEADER-->
+		<header>
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="brand" href="/">Photo Gallery</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!--VIEWS-->
+		<div ng-view></div>
+
+		<!--JS DEPENDENCIES-->
+		{{#dev}}
+			<script type="text/javascript" data-main="js/src/main" src="js/lib/require/require-jquery.js"></script>
+		{{/dev}}
+		{{^dev}}
+			<script type="text/javascript" src="js/main.js"></script>
+		{{/dev}}
+	</body>
+</html>

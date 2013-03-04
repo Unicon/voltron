@@ -1,0 +1,61 @@
+<!--
+| PhotoListCtrl controller.
+| Template is bound to the PhotoListCtrl controller.
+-->
+<div class="container">
+	<!--TEMP-->
+	<div class="row">&nbsp;</div>
+	<div class="row">&nbsp;</div>
+	<div class="row">&nbsp;</div>
+	<div class="row">
+
+		<!--SIDEBAR-->
+		<div class="span4">
+			<h1>Filters</h1>
+			<form>
+				<!--search-->
+				<label>Search:</label>
+				<input ng-model="query" type="text" class="input-medium" placeholder="Search">
+				<!--sort-->
+				<label>Sort by:</label>
+				<select ng-model="orderProp">
+					<option value="name">Alphabetical</option>
+					<option value="category">Category</option>
+				</select>
+				<p>Order prop: {{orderProp}}</p>
+			</form>
+		</div>
+
+		<!--CONTENT-->
+		<div class="span8">
+			<!--thumbnails-->
+			<div class="row">
+				<h1>{{photoHeadline}}</h1>
+				<p>Total number of photos: {{photos.length}}</p>
+				<ul class="thumbnails">
+					<li class="span8" ng-repeat="photo in photos | filter:query | orderBy:orderProp">
+						<div class="thumbnail">
+							<div class="container">
+								<div class="row">
+									<div class="span2">
+										<a href="photos/{{photo.id}}">
+											<img ng-src="{{photo.url}}" title="{{photo.name}}" alt="140x140" style="width: 140px; height: 140px;"/>
+										</a>
+									</div>
+									<div class="span6">
+										<h3><a href="photos/{{photo.id}}" title="{{photo.name}}">{{photo.name}}</a></h3>
+										<p>{{photo.description}}</p>
+										<p>
+											<a prevent-default class="btn btn-primary">Action</a>
+											<a prevent-default class="btn">Action</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<!--
+| PhotoDetailCtrl controller.
+| Template is bound to the PhotoDetailCtrl controller.
+-->
+<div class="container">
+	<!--TEMP-->
+	<div class="row">&nbsp;</div>
+	<div class="row">&nbsp;</div>
+	<div class="row">&nbsp;</div>
+	<div class="row">
+		<!--PHOTO-->
+		<div class="span4">
+			<a href="photos">
+				<i class="icon-circle-arrow-left"></i>
+				Back to Gallery
+			</a>
+			<ul class="thumbnails">
+				<li class="span4">
+					<a prevent-default class="thumbnail">
+						<img ng-src="{{photo.url}}" title="{{photo.name}}" alt="{{photo.name}}" />
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!--DETAIL-->
+		<div class="span8">
+			<h1>{{photo.name}}</h1>
+			<h2><small>Category: {{photo.category}}</small></h2>
+			<p>{{photo.long_description}}</p>
+		</div>
+	</div>
+</div>

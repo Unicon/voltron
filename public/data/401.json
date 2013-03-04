@@ -1,0 +1,8 @@
+{
+	"id": "401",
+	"name": "TV Tuner",
+	"description": "PCMCIA TV Tuner Card",
+	"long_description" : "A Tuner is a subsystem that receives radio frequency (RF) transmissions like radio broadcasts and converts the selected carrier frequency and its associated bandwidth into a fixed frequency that is suitable for further processing usually because a lower frequency is used on the output. Broadcast FM/AM transmissions are usually feed this intermediate frequency (IF) directly into a demodulator that convert the radio signal into audio-frequency signals that can be fed into an amplifier to drive a loudspeaker. More complex transmissions likePAL/NTSC (TV), DAB (digital radio), DVB-T/DVB-S/DVB-C (digital TV) etc. uses a wider frequency bandwidth. Often with several subcarriers. These are transmitted inside the receiver as an intermediate frequency (IF). The next step is usually either to process subcarriers like real radio transmissions or to sample the whole bandwidth with A/D at a rate faster than the nyquist rate that is at least 2 times the IF frequency.",
+	"url": "../../img/tv_tuner.jpg",
+	"category": "technology"
+}
