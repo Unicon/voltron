@@ -16,7 +16,7 @@ define(
 		The Application controller sits at the root of the application.
 
 		@class ApplicationCtrl
-		@submodule controller
+		@submodule gallery-controller
 		@constructor
 		**/
 		app.gallery.controller(
