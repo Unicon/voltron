@@ -8,7 +8,8 @@ define(
 		'underscore',
 		'angular',
 		'debug',
-		'resource/Photo'
+		'resource/Photo',
+		'filter/Localize'
 	],
 	function (app, $, _, angular, debug) {
 		'use strict';
@@ -23,19 +24,8 @@ define(
 					// Capture photo id from route.
 					$scope.photoId = $routeParams.photoId;
 
-					// Represents specific photo data.
-					$scope.photo = {};
-
-					// Request collection of photos.
-					Photo.getPhoto(
-						$routeParams.photoId,
-						function (data, status, headers, config) {
-							$scope.photo = data;
-						},
-						function (data, status, headers, config) {
-							$scope.photo = {};
-						}
-					);
+					// Request photo data.
+					$scope.photo = Photo.get({id: $scope.photoId});
 				}
 			]
 		);

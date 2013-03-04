@@ -15,15 +15,7 @@
 	</head>
 	<body ng-controller="ApplicationCtrl">
 		<!--HEADER-->
-		<header>
-			<div class="navbar navbar-inverse navbar-fixed-top">
-				<div class="navbar-inner">
-					<div class="container">
-						<a class="brand" href="/">Photo Gallery</a>
-					</div>
-				</div>
-			</div>
-		</header>
+		<header ng-include="'template/menu.html'"></header>
 
 		<!--VIEWS-->
 		<div ng-view></div>

@@ -11,29 +11,29 @@
 
 		<!--SIDEBAR-->
 		<div class="span4">
-			<h1>Filters</h1>
+			<h1>{{ 'Filters' | localize }}</h1>
 			<form>
 				<!--search-->
-				<label>Search:</label>
+				<label>{{ 'Search' | localize }}:</label>
 				<input ng-model="query" type="text" class="input-medium" placeholder="Search">
 				<!--sort-->
-				<label>Sort by:</label>
+				<label>{{ 'Sort by' | localize }}:</label>
 				<select ng-model="orderProp">
-					<option value="name">Alphabetical</option>
-					<option value="category">Category</option>
+					<option value="name">{{ 'Alphabetical' | localize }}</option>
+					<option value="category">{{ 'Category' | localize }}</option>
 				</select>
-				<p>Order prop: {{orderProp}}</p>
+				<p>{{ 'Order prop' | localize }}: {{orderProp}}</p>
 			</form>
 		</div>
 
 		<!--CONTENT-->
 		<div class="span8">
 			<!--thumbnails-->
-			<div class="row">
-				<h1>{{photoHeadline}}</h1>
-				<p>Total number of photos: {{photos.length}}</p>
+			<div class="row" ng-init="query='';">
+				<h1>{{ photoHeadline }}</h1>
+				<p>{{ 'Total number of photos' | localize }}: {{photos.length}}</p>
 				<ul class="thumbnails">
-					<li class="span8" ng-repeat="photo in photos | filter:query | orderBy:orderProp">
+					<li class="span8" ng-repeat="photo in photos | filter:{'name':query, 'description':query} | orderBy:orderProp">
 						<div class="thumbnail">
 							<div class="container">
 								<div class="row">
@@ -43,11 +43,11 @@
 										</a>
 									</div>
 									<div class="span6">
-										<h3><a href="photos/{{photo.id}}" title="{{photo.name}}">{{photo.name}}</a></h3>
-										<p>{{photo.description}}</p>
+										<h3><a href="photos/{{photo.id}}" title="{{photo.name}}">{{ photo.name }}</a></h3>
+										<p>{{ photo.description }}</p>
 										<p>
-											<a prevent-default class="btn btn-primary">Action</a>
-											<a prevent-default class="btn">Action</a>
+											<a prevent-default class="btn btn-primary">{{ 'Action' | localize }}</a>
+											<a prevent-default class="btn">{{ 'Action' | localize }}</a>
 										</p>
 									</div>
 								</div>

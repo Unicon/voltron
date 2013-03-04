@@ -7,7 +7,9 @@ define(
 		'jquery',
 		'underscore',
 		'angular',
-		'debug'
+		'debug',
+		'angularResource',
+		'constant'
 	],
 	function (app, $, _, angular, debug) {
 		'use strict';
@@ -15,23 +17,27 @@ define(
 		var resource = app.gallery.factory(
 			'Photo',
 			[
-				'$http',
-				function ($http) {
-					var photo = {
-						getPhotos: function (success, error) {
-							$http({method: 'GET', url: 'data/photos.json'})
-								.success(success)
-								.error(error);
+				'$resource',
+				'API_BASE',
+				function ($resource, API_BASE) {
+					return $resource(
+						API_BASE + '/:id.json',
+						{
+							id: "@id"
 						},
-
-						getPhoto: function (id, success, error) {
-							$http({method: 'GET', url: 'data/' + id + '.json'})
-								.success(success)
-								.error(error);
+						{
+							query: {
+								method: "GET",
+								isArray: true,
+								params: {
+									id: "photos"
+								}
+							},
+							update: {
+								method: "PUT"
+							}
 						}
-					};
-
-					return photo;
+					);
 				}
 			]);
 

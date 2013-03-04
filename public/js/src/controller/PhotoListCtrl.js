@@ -8,7 +8,8 @@ define(
 		'underscore',
 		'angular',
 		'debug',
-		'resource/Photo'
+		'resource/Photo',
+		'filter/Localize'
 	],
 	function (app, $, _, angular, debug) {
 		'use strict';
@@ -19,8 +20,8 @@ define(
 				'$scope',
 				'Photo',
 				function ($scope, Photo) {
-					// Collection of photos.
-					$scope.photos = [];
+					// Request collection of photos.
+					$scope.photos = Photo.query();
 
 					// Headlines.
 					$scope.photoHeadline = 'List of Photos';
@@ -28,15 +29,7 @@ define(
 					// Default order.
 					$scope.orderProp = 'name';
 
-					// Request collection of photos.
-					Photo.getPhotos(
-						function (data, status, headers, config) {
-							$scope.photos = data;
-						},
-						function (data, status, headers, config) {
-							$scope.photos = [];
-						}
-					);
+
 				}
 			]
 		);

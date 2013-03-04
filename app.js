@@ -21,9 +21,9 @@ app.configure(function () {
 	// settings.
 	app.set('port', nconf.get('PORT') || 3000);
 	app.set('views', __dirname + '/views');
-	app.set('view engine', 'hbs');
+	app.set('view engine', 'html');
 	app.set('layout', 'layout/layout');
-	app.engine('hbs', hogan);
+	app.engine('html', hogan);
 
 	// middleware.
 	app.use(express.favicon());
