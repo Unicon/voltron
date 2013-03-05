@@ -7,7 +7,9 @@ define(
 		'angular',
 		'underscore',
 		'debug',
-		'directive/PreventDefault'
+		'directive/PreventDefault',
+		'filter/Localize',
+		'service/BrowserDetect'
 	],
 	function (app, angular, _, debug) {
 		'use strict';
@@ -22,7 +24,14 @@ define(
 		app.gallery.controller(
 			'ApplicationCtrl',
 			[
-				function () {}
+				'$scope',
+				'$filter',
+				'BrowserDetect',
+				function ($scope, $filter, BrowserDetect) {
+
+					$scope.browser = BrowserDetect;
+
+				}
 			]
 		);
 	}

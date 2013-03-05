@@ -9,6 +9,7 @@ requirejs.config({
 		underscore: '../lib/underscore/underscore',
 		angular: '../lib/angular/angular',
 		angularResource: '../lib/angular/angular-resource',
+		angularLocale: '../lib/angular/i18n/angular-locale_en-us',
 		bootstrap: '../lib/bootstrap/js/bootstrap'
 	},
 	shim: {
@@ -32,6 +33,10 @@ requirejs.config({
 			deps: ['angular'],
 			exports: 'angularResource'
 		},
+		'angularLocale': {
+			deps: ['angular'],
+			exports: 'angularLocale'
+		},
 		'bootstrap': {
 			deps: ['jquery'],
 			exports: 'bootstrap'
@@ -43,6 +48,7 @@ require(
 	[
 		'app',
 		'debug',
+		'constant',
 		'router'
 	],
 	function (app) {

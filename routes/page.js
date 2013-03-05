@@ -17,4 +17,5 @@ module.exports = function (app) {
 	app.get('/', index);
 	app.get('/home', index);
 	app.get('/photos', index);
+	app.get('/photos/*', index);
 };

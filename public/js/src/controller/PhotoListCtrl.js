@@ -8,35 +8,51 @@ define(
 		'underscore',
 		'angular',
 		'debug',
-		'resource/Photo'
+		'resource/Photo',
+		'filter/Localize'
 	],
 	function (app, $, _, angular, debug) {
 		'use strict';
 
+		/**
+		The PhotoListCtrl is responsible for loading and displaying the photo list view.
+
+		@class PhotoListCtrl
+		@submodule gallery-controller
+		@constructor
+		**/
 		app.gallery.controller(
 			'PhotoListCtrl',
 			[
 				'$scope',
 				'Photo',
 				function ($scope, Photo) {
-					// Collection of photos.
-					$scope.photos = [];
+					/**
+					List of Photo objects
 
-					// Headlines.
+					@property photos
+					@type Array
+					**/
+					$scope.photos = Photo.query();
+
+					/**
+					Title of page
+
+					@property photoHeadline
+					@type Array
+					**/
 					$scope.photoHeadline = 'List of Photos';
 
-					// Default order.
+					/**
+					Property to sort photos on.
+
+					@property orderProp
+					@type String
+					@default name
+					**/
 					$scope.orderProp = 'name';
 
-					// Request collection of photos.
-					Photo.getPhotos(
-						function (data, status, headers, config) {
-							$scope.photos = data;
-						},
-						function (data, status, headers, config) {
-							$scope.photos = [];
-						}
-					);
+
 				}
 			]
 		);

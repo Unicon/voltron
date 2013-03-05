@@ -7,7 +7,8 @@ define(
 		'angular',
 		'controller/ApplicationCtrl',
 		'controller/PhotoListCtrl',
-		'controller/PhotoDetailCtrl'
+		'controller/PhotoDetailCtrl',
+		'filter/Localize'
 	],
 	function (app) {
 		'use strict';
