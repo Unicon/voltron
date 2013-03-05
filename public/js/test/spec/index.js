@@ -7,7 +7,10 @@ define(function () {
 	return {
 		specs: [
 			'spec/controller/PhotoDetailCtrl.spec',
-			'spec/controller/PhotoListCtrl.spec.js'
+			'spec/controller/PhotoListCtrl.spec',
+			'spec/resource/Photo.spec',
+			'spec/filter/Localize.spec',
+			'spec/service/BrowserDetect.spec'
 		]
 	};
 });
