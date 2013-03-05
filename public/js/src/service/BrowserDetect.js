@@ -163,7 +163,7 @@ define(
 					@property browser
 					@type String
 					**/
-					BrowserDetect.browser = $filter('localize')(searchString(dataBrowser) || "An unknown browser");
+					BrowserDetect.browser = searchString(dataBrowser) || "An unknown browser";
 
 					/**
 					String representing the name of the Version of the Browser detected
@@ -171,7 +171,7 @@ define(
 					@property version
 					@type String
 					**/
-					BrowserDetect.version = $filter('localize')(searchVersion(navigator.userAgent) || searchVersion(navigator.appVersion) || "an unknown version");
+					BrowserDetect.version = searchVersion(navigator.userAgent) || searchVersion(navigator.appVersion) || "an unknown version";
 
 					/**
 					String representing the name of the Operating System detected
@@ -179,7 +179,7 @@ define(
 					@property OS
 					@type String
 					**/
-					BrowserDetect.OS = $filter('localize')(searchString(dataOS) || "an unknown OS");
+					BrowserDetect.OS = searchString(dataOS) || "an unknown OS";
 
 					return BrowserDetect;
 				}

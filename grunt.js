@@ -161,7 +161,7 @@ module.exports = function (grunt) {
 	// Register tasks.
 	grunt.registerTask('docs', 'yuidoc');
 	grunt.registerTask('docs.server', 'exec:yuidoc');
-	grunt.registerTask('test', 'server exec');
-	grunt.registerTask('test.watch', 'server exec watch:test');
+	grunt.registerTask('test', 'server exec:jasmine');
+	grunt.registerTask('test.watch', 'server exec:jasmine watch:test');
 	grunt.registerTask('default', 'lint less requirejs html copy yuidoc');
 };
