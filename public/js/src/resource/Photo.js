@@ -14,6 +14,13 @@ define(
 	function (app, $, _, angular, debug) {
 		'use strict';
 
+		/**
+		The Photo resource handles AJAX requests to the server for photo data.
+
+		@class Photo
+		@submodule gallery-resource
+		@constructor
+		**/
 		var resource = app.gallery.factory(
 			'Photo',
 			[
@@ -26,6 +33,12 @@ define(
 							id: "@id"
 						},
 						{
+							/**
+							Query returns a list of photos from the server based on pre-defined parameters.
+
+							@method query
+							@returns Array
+							**/
 							query: {
 								method: "GET",
 								isArray: true,
@@ -33,6 +46,15 @@ define(
 									id: "photos"
 								}
 							},
+
+							/**
+							Update issues a PUT request to the server to update a photo resource.
+
+							@method update
+							@param {Number} id ID of photo resource.
+							@param {Object} data JavaScript Hash of photo properties to be saved.
+							@returns Object
+							**/
 							update: {
 								method: "PUT"
 							}

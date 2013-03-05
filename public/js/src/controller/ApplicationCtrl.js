@@ -8,7 +8,8 @@ define(
 		'underscore',
 		'debug',
 		'directive/PreventDefault',
-		'filter/Localize'
+		'filter/Localize',
+		'service/BrowserDetect'
 	],
 	function (app, angular, _, debug) {
 		'use strict';
@@ -25,7 +26,12 @@ define(
 			[
 				'$scope',
 				'$filter',
-				function ($scope, $filter) {}
+				'BrowserDetect',
+				function ($scope, $filter, BrowserDetect) {
+
+					$scope.browser = BrowserDetect;
+
+				}
 			]
 		);
 	}
