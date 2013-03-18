@@ -30,7 +30,7 @@ define(
 					return $resource(
 						API_BASE + '/:id.json',
 						{
-							id: "@id"
+							id: '@id'
 						},
 						{
 							/**
@@ -40,10 +40,10 @@ define(
 							@returns Array
 							**/
 							query: {
-								method: "GET",
+								method: 'GET',
 								isArray: true,
 								params: {
-									id: "photos"
+									id: 'photos'
 								}
 							},
 
@@ -56,7 +56,7 @@ define(
 							@returns Object
 							**/
 							update: {
-								method: "PUT"
+								method: 'PUT'
 							}
 						}
 					);

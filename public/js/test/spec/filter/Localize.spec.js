@@ -13,7 +13,7 @@ define(
 		'use strict';
 
 		var dictionary = {
-				"one": "uno"
+				'one': 'uno'
 			},
 			list, obj;
 
@@ -32,7 +32,7 @@ define(
 
 			it('should translate a string of text when available in the dictionary provided', inject(
 				function ($filter, $httpBackend) {
-					expect(localize("one")).toEqual(dictionary.one);
+					expect(localize('one')).toEqual(dictionary.one);
 				}
 			));
 

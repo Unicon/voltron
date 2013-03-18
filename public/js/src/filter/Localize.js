@@ -29,13 +29,16 @@ define(
 					@param {String} input String to translate
 					@returns {String} Translated string if found in dictionary, input string if not found in dictionary
 					@example
-						{{ "foobar" | localize }} will return "foobar"
+						{{ 'foobar' | localize }} will return 'foobar'
 					*/
 					var locale, TranslationMap, map, loaded;
 					locale = $locale.id;
-					TranslationMap = $resource('i18n/:locale.json', {
-						"locale": "@locale"
-					});
+					TranslationMap = $resource(
+						'i18n/:locale.json',
+						{
+							locale: '@locale'
+						}
+					);
 					map = TranslationMap.get({locale: locale}, function () {
 						loaded = true;
 					});
@@ -49,10 +52,10 @@ define(
 							return input;
 						}
 						if (!input) {
-							return "";
+							return '';
 						}
 						if (!map[input]) {
-							debug.warn("No localization data for \"" + input + "\" in " + locale);
+							debug.warn('No localization data for \'' + input + '\' in ' + locale);
 						}
 						return map[input] || input;
 					};

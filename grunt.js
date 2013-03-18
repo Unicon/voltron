@@ -107,7 +107,8 @@ module.exports = function (grunt) {
 					baseUrl: './public/js/src',
 					mainConfigFile: './public/js/src/main.js',
 					out: './target/gallery-ui/js/main.js',
-					name: 'main'
+					name: 'main',
+					preserveComments: false
 				}
 			}
 		},

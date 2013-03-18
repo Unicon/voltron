@@ -16,11 +16,11 @@ define(
 		var properties = ['name', 'description', 'url', 'category'],
 			photos = [
 				{
-					"id": "100",
-					"name": "Fish Hanging",
-					"description": "Fish captured with empty hand",
-					"url": "../../img/fish_hanging.jpg",
-					"category": "animals"
+					'id': '100',
+					'name': 'Fish Hanging',
+					'description': 'Fish captured with empty hand',
+					'url': '../../img/fish_hanging.jpg',
+					'category': 'animals'
 				}
 			],
 			list, obj;
@@ -51,7 +51,7 @@ define(
 				function ($httpBackend, Photo) {
 					Photo.get(
 						{
-							id:1
+							id: 1
 						},
 						function (data) {
 							obj = data;
