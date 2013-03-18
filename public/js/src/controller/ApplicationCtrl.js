@@ -26,10 +26,17 @@ define(
 			[
 				'$scope',
 				'$filter',
+				'$location',
+				'$log',
 				'BrowserDetect',
-				function ($scope, $filter, BrowserDetect) {
+				function ($scope, $filter, $location, $log, BrowserDetect) {
 
 					$scope.browser = BrowserDetect;
+
+					$scope.$on('$routeChangeSuccess', function (ev) {
+						var page = $location.path();
+						$scope.page = page.split('/').join(' ');
+					});
 
 				}
 			]
