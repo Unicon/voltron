@@ -4,7 +4,8 @@
 define(
 	[
 		'app',
-		'angular'
+		'angular',
+		'constant'
 	],
 	function (app, angular) {
 		'use strict';

@@ -9,20 +9,18 @@ define(
 		'underscore'
 	],
 	function (app, angular, mock, _) {
-
 		'use strict';
 
-		var dictionary = {
-				'one': 'uno'
-			},
-			list, obj;
+		// Define.
+		var dictionary = {'one': 'uno'},
+			list, obj, localize;
 
 		describe('Localize filter', function () {
 
+			// Load gallery module.
 			beforeEach(module('gallery'));
 
-			var localize;
-
+			// Mock request.
 			beforeEach(inject(function ($filter, $httpBackend) {
 				$httpBackend.whenGET('i18n/en-us.json').respond(dictionary);
 
@@ -30,12 +28,9 @@ define(
 				$httpBackend.flush();
 			}));
 
-			it('should translate a string of text when available in the dictionary provided', inject(
-				function ($filter, $httpBackend) {
-					expect(localize('one')).toEqual(dictionary.one);
-				}
-			));
-
+			it('should translate a string of text when available in the dictionary provided', inject(function ($filter, $httpBackend) {
+				expect(localize('one')).toEqual(dictionary.one);
+			}));
 
 		});
 	}
