@@ -142,8 +142,8 @@ module.exports = function (grunt) {
 					'target/gallery-ui/img/': 'public/img/**',
 					//'target/gallery-ui/i18n/': 'public/i18n/**',
 					'target/gallery-ui/template/': 'public/template/**',
-					'target/gallery-ui/font/': 'public/less/lib/font-awesome/font/**',
-					'target/gallery-ui/data/': 'public/data/**'
+					'target/gallery-ui/font/': 'public/less/lib/font-awesome/font/**'
+					//'target/gallery-ui/data/': 'public/data/**'
 				}
 			}
 		},

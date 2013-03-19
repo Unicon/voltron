@@ -1,10 +1,7 @@
-/**
-Simple catch all route implementation.
+/*global exports:true, module:true, require:true */
 
-@param {Object} app Express application instance.
-**/
+// Simple catch all route implementation.
 module.exports = function (app) {
-	// Catch all response.
 	var index = function (req, res) {
 		res.render('index', {
 			title: 'Angular with Require || Gallery',

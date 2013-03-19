@@ -1,8 +1,7 @@
-/**
-Maps routes to separate module files.
+/*global exports:true, module:true, require:true */
 
-@param {Object} app Express application instance.
-**/
+// Maps routes to separate module files.
 module.exports = function (app) {
 	require('./page')(app);
+	require('./photos')(app);
 };

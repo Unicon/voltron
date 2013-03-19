@@ -9,12 +9,15 @@ define(
 
 		'use strict';
 
-		app.gallery
-			.constant(
-				'API_BASE',
-				'/data'
-			);
+		/**
+		Defines base url for resources.
 
+		@attribute API_BASE
+		@readOnly
+		@default '/api/0.1'
+		@type String
+		**/
+		app.gallery.constant('API_BASE', '/api/0.1');
 	}
 );
 
