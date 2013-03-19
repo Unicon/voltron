@@ -1,5 +1,5 @@
 /*jshint nomen:false */
-/*global define:true, describe:true, beforeEach:true, module:true it:true, expect:true, inject:true */
+/*global define:true, describe:true, beforeEach:true, afterEach:true, module:true it:true, expect:true, inject:true */
 
 define(
 	[
@@ -28,19 +28,17 @@ define(
 
 				// Backend definition common for all tests.
 				httpBackend.when('GET', requestUrl)
-					.respond(
-						{
-							"id": "100",
-							"name": "Fish Hanging",
-							"description": "Fish captured with empty hand",
-							"url": "../../img/fish_hanging.jpg",
-							"category": "animals"
-						}
-					);
+					.respond({
+						'id': '100',
+						'name': 'Fish Hanging',
+						'description': 'Fish captured with empty hand',
+						'url': '../../img/fish_hanging.jpg',
+						'category': 'animals'
+					});
 			}));
 
 			// All requests have been handled.
-			afterEach(function() {
+			afterEach(function () {
 				httpBackend.verifyNoOutstandingExpectation();
 				httpBackend.verifyNoOutstandingRequest();
 			});

@@ -1,5 +1,5 @@
 /*jshint nomen:false */
-/*global define:true, describe:true, beforeEach:true, module:true it:true, expect:true, inject:true, runs:true, waitsFor:true */
+/*global define:true, describe:true, beforeEach:true, afterEach:true, module:true it:true, expect:true, inject:true, runs:true, waitsFor:true */
 
 define(
 	[
@@ -39,7 +39,7 @@ define(
 			}));
 
 			// All requests have been handled.
-			afterEach(function() {
+			afterEach(function () {
 				httpBackend.verifyNoOutstandingExpectation();
 				httpBackend.verifyNoOutstandingRequest();
 			});
