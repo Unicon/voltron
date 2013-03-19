@@ -14,7 +14,7 @@ define(
 		Used to GET a list of photos from the Photos API.
 
 		@class Photos
-		@submodule resource
+		@submodule gallery-resource
 		@constructor
 		*/
 		app.gallery.factory(
