@@ -6,7 +6,7 @@ define(
 		'app',
 		'angular',
 		'angularMock',
-		'resource/Photo'
+		'resource/Photos'
 	],
 	function (app, angular) {
 		'use strict';
@@ -27,15 +27,15 @@ define(
 			requestUrl,
 			httpBackend;
 
-		describe('Photo resource', function () {
+		describe('Photos resource', function () {
 			// Load the gallery module.
 			beforeEach(module('gallery'));
 
 			// Mock request with $httpBackend.
 			beforeEach(inject(function ($injector) {
 				httpBackend = $injector.get('$httpBackend');
-				requestUrl = '/api/0.1/photo/100';
-				httpBackend.whenGET(requestUrl).respond(photos[0]);
+				requestUrl = '/api/0.1/photos';
+				httpBackend.whenGET(requestUrl).respond(photos);
 			}));
 
 			// All requests have been handled.
@@ -44,20 +44,18 @@ define(
 				httpBackend.verifyNoOutstandingRequest();
 			});
 
-			it('should return photos with the following properties: ' + properties.toString(), inject(function ($httpBackend, Photo) {
+			it('should get a list of photos', inject(function ($httpBackend, Photos) {
 					httpBackend.expectGET(requestUrl);
-					Photo.get(
-						{
-							id: 100
-						},
-						function (data) {
-							obj = data;
+					Photos.query(
+						function (response) {
+							list = response;
 						}
 					);
 					httpBackend.flush();
-					expect(JSON.stringify(obj)).toEqual(JSON.stringify(photos[0]));
+					expect(JSON.stringify(list)).toEqual(JSON.stringify(photos));
 				}
 			));
+
 		});
 	}
 );

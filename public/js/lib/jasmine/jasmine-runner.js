@@ -148,7 +148,7 @@ var jasmineRunner = {
 								for (x; x < result_length; x++) {
 									suite = result[x];
 									spec = suite.querySelector('.description').innerText;
-									description = suite.querySelector('.specSummary.passed').innerText;
+									description = suite.querySelector('.specSummary.passed .description').innerText;
 
 									console.log(spec);
 									console.log(' ', description);
