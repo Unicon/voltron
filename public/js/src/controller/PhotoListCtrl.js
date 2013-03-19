@@ -8,7 +8,7 @@ define(
 		'underscore',
 		'angular',
 		'debug',
-		'resource/Photo',
+		'resource/Photos',
 		'filter/Localize'
 	],
 	function (app, $, _, angular, debug) {
@@ -25,18 +25,25 @@ define(
 			'PhotoListCtrl',
 			[
 				'$scope',
-				'Photo',
-				function ($scope, Photo) {
+				'Photos',
+				function ($scope, Photos) {
 					/**
-					List of Photo objects
+					List of Photo objects.
 
 					@property photos
 					@type Array
 					**/
-					$scope.photos = Photo.query();
+					$scope.photos = [];
+
+					// Request photos.
+					Photos.get(
+						function (response) {
+							$scope.photos = response.photos;
+						}
+					);
 
 					/**
-					Title of page
+					Title of page.
 
 					@property photoHeadline
 					@type Array
@@ -51,8 +58,6 @@ define(
 					@default name
 					**/
 					$scope.orderProp = 'name';
-
-
 				}
 			]
 		);

@@ -43,7 +43,14 @@ define(
 					@property photo
 					@type Object
 					**/
-					$scope.photo = Photo.get({id: $scope.photoId});
+					$scope.photo = Photo.get(
+						{
+							id: $scope.photoId
+						},
+						function (response) {
+							$scope.photo = response.photo;
+						}
+					);
 				}
 			]
 		);
