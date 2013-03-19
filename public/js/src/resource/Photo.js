@@ -17,7 +17,7 @@ define(
 		@submodule gallery-resource
 		@constructor
 		**/
-		var resource = app.gallery.factory(
+		app.gallery.factory(
 			'Photo',
 			[
 				'$resource',
@@ -30,8 +30,7 @@ define(
 						}
 					);
 				}
-			]);
-
-		return resource;
+			]
+		);
 	}
 );
